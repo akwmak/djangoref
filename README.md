@@ -9,25 +9,9 @@ The goal of this in-progress repository will be to concisely capture / document 
 - Filters
 - Date formats
 
-#### Models
+#### [Models](#model-section)
 
-- Common field options (kwargs)
-  - null
-  - blank
-  - choices
-  - db_column
-  - db_index
-  - default
-  - editable
-  - error_messages
-  - help_text
-  - primary_key
-  - unique
-  - unique_for_date
-  - unique_for_month
-  - unique_for_year
-  - verbose_name
-  - validators
+- [Field options (kwargs)](#model-fields)
 - Fields
   - Numbers
   - Boolean
@@ -125,3 +109,28 @@ The goal of this in-progress repository will be to concisely capture / document 
 - [Custom user models](http://stackoverflow.com/questions/44109/extending-the-user-model-with-custom-fields-in-django)
 - [File upload example](http://stackoverflow.com/a/8542030/3518452)
 - `null` vs. `blank` &mdash; Differences, and when to use them
+
+
+## <a name="model-section"></a>Models
+
+### <a name="model-fields"></a>Field Options
+
+| option           | type                     | default |
+|------------------|--------------------------|---------|
+| null             | boolean                  | False |
+| blank            | boolean                  | False |
+| choices          | iterable (list or tuple) | None |
+| db_column        | string | None |
+| db_index         | boolean | False |
+| db_tablespace    | string | None |
+| default          | value or callable | [NOT_PROVIDED](https://docs.djangoproject.com/en/dev/_modules/django/db/models/fields/) |
+| editable         | boolean | True |
+| error_messages   | dictionary | None |
+| help_text        | string | `''` (empty string) |
+| primary_key      | boolean | False |
+| unique | boolean | False |
+| unique_for_date  | string (`DateField` or `DateTimeField` name) | None |
+| unique_for_month | string (`DateField` or `DateTimeField` name) | None |
+| unique_for_year  | string (`DateField` or `DateTimeField` name) | None |
+| verbose_name     | string | None |
+| validators       | list | `[]` (empty list) |
