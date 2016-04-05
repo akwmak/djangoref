@@ -1,6 +1,6 @@
 # Django Cheat Sheet
 
-The goal of this in-progress repository will be to concisely capture / document common, core Django tools. Where appropriate, code samples will be added to highlight common use cases.
+The goal of this in-progress repository will be to concisely capture / document common, core Django tools. Where appropriate, code samples will be added to highlight common use cases. Links to popular Stack Overflow answers will also be added to further explain topics.
 
 ## Contents
 
@@ -119,3 +119,9 @@ The goal of this in-progress repository will be to concisely capture / document 
   - Shell
   - Server
   - etc.
+
+#### Misc (not sure if these are staying)
+- The `request` object
+- [Custom user models](http://stackoverflow.com/questions/44109/extending-the-user-model-with-custom-fields-in-django)
+- [File upload example](http://stackoverflow.com/a/8542030/3518452)
+- `null` vs. `blank` &mdash; Differences, and when to use them
