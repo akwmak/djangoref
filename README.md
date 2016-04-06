@@ -9,7 +9,7 @@ The goal of this in-progress repository will be to concisely capture / document 
 - Filters
 - Date formats
 
-#### [Models](#model-section)
+#### [Models](#models)
 
 - [Field options (kwargs)](#model-field-options)
 - [Fields](#model-fields)
@@ -104,9 +104,9 @@ The goal of this in-progress repository will be to concisely capture / document 
 - `null` vs. `blank` &mdash; Differences, and when to use them
 
 
-## <a name="model-section"></a>Models
+## Models
 
-### <a name="model-field-options"></a>Field Options
+### Model Field Options
 
 | Option           | Type                     | Default |
 |------------------|--------------------------|---------|
@@ -128,7 +128,7 @@ The goal of this in-progress repository will be to concisely capture / document 
 | `verbose_name`     | string | `None` |
 | `validators`       | list | `[]` (empty list) |
 
-### <a name="model-fields"></a>Fields
+### Model Fields
 
 | Field Name | Options | Notes |
 |------------|------------------|----------|-|-|
@@ -146,9 +146,18 @@ The goal of this in-progress repository will be to concisely capture / document 
 | `FileField` | [<code>upload_to=<em>None</em></code>] <br> [<code>max_length=<em>100</em></code>] | |
 | `FilePathField` | <code>path=<em>None</em></code> <br> [<code>match=<em>None</em></code>] <br> [<code>recursive=<em>False</em></code>] <br> [<code>max_length=<em>100</em></code>] | |
 | `FloatField` | | Uses Python's `float` type |
+| `ForeignKey` | `othermodel` <br> [[`ondelete`](https://docs.djangoproject.com/en/dev/ref/models/fields/#django.db.models.ForeignKey.on_delete)] <br> [`related_name`] | A many-to-one relationship. See additional arguments [in the docs](https://docs.djangoproject.com/en/1.9/ref/models/fields/#arguments). |
 | `GenericIPAddressField` | [<code>protocol=<em>'both'</em></code>] <br> [<code>unpack_ipv4=<em>False</em></code>] | If `blank=True`, `null` must be `True` |
 | `ImageField` | [<code>upload_to=<em>None</em></code>] <br> [<code>height_field=<em>None</em></code>] <br> [<code>width_field=<em>None</em></code>] <br> [<code>max_length=<em>100</em></code>] | Requires the [Pillow](https://pillow.readthedocs.org/en/latest/) library |
 | `IntegerField` | | For integers between -2147483648 and 2147483647 |
+| `ManyToManyField` | `othermodel` <br> [`related_name`] | See additional arguments [in the docs](https://docs.djangoproject.com/en/1.9/ref/models/fields/#manytomany-arguments). |
 | `NullBooleanField` | | Like `BooleanField`, but allows `NULL` values by default |
+| `OneToOneField` | `othermodel` <br> [`ondelete`] <br> [<code>parent_link=<em>False</em></code>] <br> [`related_name`] | |
 | `PositiveIntegerField` | | Like an `IntegerField`, but must be either positive or zero (0). |
 | `PositiveSmallIntegerField` | | A `PositiveIntegerField` for small values. Values from 0 to 32767 are safe in all databases. |
+| `SlugField` | [<code>max_length=<em>50</em></code>] <br> [<code>allow_unicode=<em>False</em></code>] | |
+| `SmallIntegerField` | | Integers between -32768 and 32767 are safe in all databases. |
+| `TextField` | | A large text field. `max_length` is not enforced at the db level. |
+| `TimeField` | [<code>auto_now=<em>False</em></code>] <br> [<code>auto_now_add=<em>False</em></code>] | Represented in Python by a `datetime.time` instance. |
+| `URLField` | [<code>max_length=<em>200</em></code>] | A `CharField` for URLs |
+| `UUIDField` | | | |
