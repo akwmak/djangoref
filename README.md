@@ -131,7 +131,7 @@ The goal of this in-progress repository will be to concisely capture / document 
 ### Model Fields
 
 | Field Name | Options | Notes |
-|------------|------------------|----------|-|-|
+|------------|------------------|----------|
 | `AutoField` | | You usually won’t need to use this directly. |
 | `BigIntegerField` | | For integers between -9223372036854775808 and 9223372036854775807 |
 | `BinaryField` | | Reminder: don't store files in the db |
